@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Experimenting with CSS</title>
+	<style type="text/css">
+		ol {font-size: 24px;}
+		ul {font-size: 32px;}
+
+		li.one {list-style-type: disc;}
+		li.two {list-style-type: square;}
+		li.three {  list-style-image: url("https://mdn.mozillademos.org/files/11981/starsolid.gif");}
+		/*li.three {list-style-image:  url("rainbow-bullet.jpg");}*/
+
+		ol {list-style-type: upper-roman;}
+		ol ol {list-style-type: upper-alpha;}
+		ol ol ol {list-style-type: decimal;}
+
+		table {
+			border-style: ridge;
+			border-width: 6px;
+			border-color: red;
+			border-left-color:orange;
+			border-right-color:orange;
+			border-left-style: dashed;
+			border-right-style: dashed;
+		}
+		th {
+			border: ridge 4px pink
+		}
+		td {
+			border: ridge 4px yellow;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h3 style="font-size: 40px;">This is a heading 3.</h3>
+	<ul >
+		<li class = "one">Regular bullet</li>
+		<li class = "two">Square bullet</li>
+		<li class = "three">Image bullet</li>
+	</ul>
+
+	<h3 style="font-size: 32">Continent</h3>
+	<ol>
+		<li>Africa
+			<ol>
+				<li>Egypt
+					<ol>
+						<li>Cairo</li>
+						<li>Nile</li>
+					</ol>
+				</li>
+				<li>South africa
+					<ol>
+						<li>Joanna</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>Asia
+			<ol>
+				<li>China
+					<ol>
+						<li>Beijing</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+	</ol>
+
+	<table width="25%">
+		<caption>My table</caption>
+		<tr>
+			<th></th>
+			<th>col 1</th>
+			<th>col 2</th>
+		</tr>
+		<tr>
+			<th>row 1</th>
+			<td>data 1</td>
+			<td>data 2</td>
+		</tr>
+		<tr>
+			<th>row 2</th>
+			<td>data 3</td>
+			<td>data 4</td>
+		</tr>
+	</table>
+
+</body>
+</html>
