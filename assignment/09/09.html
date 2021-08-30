@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration for Hackathon</title>
+	<style type="text/css">
+		body{
+			background-color: lightyellow;
+			border-collapse: collapse;
+		}
+		div.full-form {
+			width: 40%;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #fcfef3;
+			padding: 10px;
+		}
+		.input, select{
+			background-color: #fdf;
+			display: block;
+			margin:  auto;
+		}
+		div.form-part{
+			border-top: 1px solid grey;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+		}
+		.input{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div class="full-form">
+	<h1>Registration for Hackathon</h1>
+
+	<form action="submitted.html">
+
+		<div class="form-part">
+			<label>Fullname <span style="color:red">*</span></label>
+			<input type="text" class="input" name="fullname">		
+		</div>
+		<div class="form-part">
+			<label>Email</label>
+			<input type="text" class="input" name="Email">
+		</div>
+
+		<div class="form-part">
+			<label>USN <span style="color:red">*</span></label>
+			<input type="text" class="input" name="usn">
+		</div>
+		<div class="form-part">
+		<label>College <span style="color:red">*</span></label>
+		<select name="college">
+			<option>DSU</option>
+			<option>DSCE</option>
+			<option>DSATM</option>
+		</select>
+		</div>
+		<div class="form-part">
+		<label>Select Year: </label> <br>
+		<input type="radio" name="year">
+		<label>1</label><br>
+		<input type="radio" name="year">
+		<label>2</label><br>
+		<input type="radio" name="year">
+		<label>3</label><br>
+		<input type="radio" name="year">
+		<label>4</label><br>
+		</div>
+		<input type="submit" value="Submit">
+
+	</form>
+	</div>
+</body>
+</html>
