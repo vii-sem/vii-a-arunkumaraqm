@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<style type="text/css">
+		body{
+			background-color: #ebd687;
+		}
+		div#canvas{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border-collapse: collapse;
+			/*-moz-transform: translateX(-50%) translateY(-50%);*/
+    /*-webkit-transform: translateX(-50%) translateY(-50%);*/
+			transform: translateX(-50%) translateY(-50%);
+			padding: 5px;
+			border: black 3px solid;
+			background-color: #ffcfb1;
+		}
+		input.cbutton{
+			width: 40px;
+			background-color: skyblue;
+			color: black;
+			padding: 10px;
+			font-size:  15px;
+		}
+		input#equals-button{
+			width: 83px;
+			color: black;	
+			background-color: skyblue;
+			padding: 10px;
+			font-size:  15px;
+		}
+		input#ce-button{
+			width: 83px;
+			color: black;	
+			background-color: skyblue;
+			padding: 10px;
+			font-size:  15px;
+		}
+		input#del-button{
+			width: 83px;
+			color: black;	
+			background-color: skyblue;
+			padding: 10px;
+			font-size:  15px;
+		}
+		input#textbox{
+			padding: 10px;
+			margin-bottom: 10px;
+			margin-top: 5px;
+			background-color: #87ebd6;	
+			border: black 2px solid;
+		}
+	</style>
+</head>
+<body>
+	<div id="canvas">
+	<form name="calcu">
+	<input id="textbox" type="text" name="textbox" value="">
+	<table name="numpad">
+		<tr>
+			<td>
+				<input class="cbutton" type="button" value="7" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="8" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="9" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="+" onclick="calcu.textbox.value+=value;">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="cbutton" type="button" value="4" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="5" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="6" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="*" onclick="calcu.textbox.value+=value;">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="cbutton" type="button" value="1" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="2" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="3" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="-" onclick="calcu.textbox.value+=value;">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input class="cbutton" type="button" value="0" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="." onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="%" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value="/" onclick="calcu.textbox.value+=value;">
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>
+				<input class="cbutton" type="button" value="(" onclick="calcu.textbox.value+=value;">
+			</td>
+			<td>
+				<input class="cbutton" type="button" value=")" onclick="calcu.textbox.value+=value;">
+			</td>
+			<th colspan="2">
+				<input class="cbutton" id="equals-button" type="button" value="=" onclick="calcu.textbox.value=eval(calcu.textbox.value);">
+			</th>			
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<input class="cbutton" type="button" value="CE" onclick="calcu.textbox.value='';" id="ce-button">
+			</td>
+			<td colspan="2">
+				<input class="cbutton" type="button" value="DEL" onclick="calcu.textbox.value = calcu.textbox.value.slice(0, -1);" id="del-button">
+			</td>
+
+		</tr>
+	</table>
+</form>
+</div>
+
+</body>
+</html>
