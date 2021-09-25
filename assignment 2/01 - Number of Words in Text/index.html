@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Temp</title>
+	<style type="text/css">
+		td {
+			text-align: center;
+		}
+		.validation-error {
+			color: red;
+			font: 12px;
+		}
+	</style>
+	<script type="text/javascript">
+		/*for (var i = 0; i < 6; ++i){
+			document.write(i,"-");
+		}*/
+/*
+		var a = prompt("A");
+		var b = prompt("b");
+		var c = prompt("c");
+
+		var disc = b * b - 4 * a * c;
+		var sqdisc = Math.sqrt(disc);
+		var denom = 2 * a;
+		var root1 = (-b + sqdisc) / denom;
+
+		document.write(root1);*/
+/*
+		var today = new Date();
+		document.write(today.getHours(), ":", today.getMinutes(), "<br>");
+
+		var start = new Date();
+		var x = 0;
+		for (var i = 0; i < 300000; ++i)
+		{
+			x += Math.pow(i, i % 100);
+		}
+		var end = new Date();
+		document.write("Time taken ms: ", end - start);*/
+
+	</script>
+
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<h3>Enter some text here: </h3>
+	<textarea id="description-input">
+		
+	</textarea>
+
+	<button onclick="countWords()">
+		Count Words
+	</button>
+
+	<p>Word count: <span id="show-count">0</span></p>
+
+
+	<h3>Enter your age here: </h3>
+	<input type="text" id='age-input' onblur="validateAge()">
+
+	<p>
+		<span id='age-validation-error' class='validation-error'>
+		</span>
+	</p>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Temp</title>
+	<style type="text/css">
+		td {
+			text-align: center;
+		}
+		.validation-error {
+			color: red;
+			font: 12px;
+		}
+	</style>
+	<script type="text/javascript" src="main.js"></script>
+	
+</head>
+<body>
+	<h3>Student Registration Form</h3>
+	<form>
+		<p>Full name: </p>
+		<input type="text" name="fullname">
+
+		<p>Roll no: </p>
+		<input type="text" id='rollno-input' name="rollno" onblur="validateRollno();">
+
+		
+			<span id='rollno-validation-error' class="validation-error"></span>
+		
+
+
+		<p>Course: </p>
+		<input type="text" name="course">
+	</form>
+</body>
+</html>
