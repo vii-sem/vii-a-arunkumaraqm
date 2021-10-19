@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Text growing and shrinking -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<script type="text/javascript">
+		window.onload = main;
+
+		function main() {
+				
+			console.log('hey');
+			var interval = setInterval(grow, 250);
+			var element = document.getElementById('demo');
+
+			var size = 25; 
+			var color = 'red';
+
+			function grow() {
+				console.log('grow');
+				color = 'red';
+				size += 5;
+				element.innerHTML = 'Text Growing';
+				element.setAttribute(
+					'style', 
+					'font-size:' + size + 'px;' +
+					'color:' + color + ';'
+				);
+
+				if (size == 50)
+				{
+					clearInterval(interval);
+					interval = setInterval(shrink, 250);
+				}
+			}
+
+			function shrink() {
+				console.log('shrink');
+				color = 'blue';
+				size -= 5;
+				element.innerHTML = 'Text Shriking';
+				element.setAttribute(
+					'style', 
+					'font-size:' + size + 'px;' +
+					'color:' + color + ';'
+				);
+
+				if (size == 25)
+				{
+					clearInterval(interval);
+					interval = setInterval(grow, 250);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<div id="demo">
+		
+	</div>
+
+</body>
+</html>

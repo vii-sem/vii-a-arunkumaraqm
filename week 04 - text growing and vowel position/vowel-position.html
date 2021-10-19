@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Take input. If string is given, find position of left most vowel. Else if number is given, reverse it. -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<script type="text/javascript">
+		var givenInput = prompt();
+		if (isNaN(givenInput)) {
+			let vowels = 'aeiou';
+			var position = -1;
+			str = givenInput.toLowerCase();
+			for (var i = 0; i < str.length; ++i)
+			{
+				if (vowels.search(str[i]) != -1) {
+					position = i;
+					break;
+				}
+			}
+			if (position != -1)
+			{
+				alert(position);
+			}
+			else{
+				alert('Not found');
+			}
+		}
+		else {
+			alert(givenInput.split('').reverse().join(''));
+
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

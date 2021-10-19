@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Calendar
+	</title>
+	<style type="text/css">
+		table {
+			padding: 10px;
+			margin: 10px;
+			border: double 10px;
+			border-collapse: collapse;
+		}
+		th, td{
+			border: dashed 1px grey;
+			padding: 5px;
+		}
+		h2 {
+			margin-left: 10px;
+			padding: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+
+		const monthNames = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun',
+			'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+		const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sun'];
+
+		function dayOfTheWeek(y, m, d)	/* 1 <= m <= 12,  y > 1752 (in the U.K.)  0=sunday*/
+		{
+		    var t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
+		    if ( m < 3 )
+		    {
+		        y -= 1;
+		    }
+		    return (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
+		}
+
+		function dayTitle(dayName) {
+			return '<th>' + dayName + '</th>';
+		}
+
+		function makeMonthCalendar(yearNo, monthName, monthNfDays){
+			console.log(monthName);
+			var monthNo = monthNames.indexOf(monthName);
+			var monthOffset = dayOfTheWeek(yearNo, monthNo, 1) - 1
+			daysArray = [];
+			for (let i = 0; i < monthOffset; ++i)
+			{
+				daysArray.push("");
+			}
+			for (let i = 1; i <= monthNfDays; ++i)
+			{
+				daysArray.push(i);
+			}
+			var remaining = 5 * 7 - daysArray.length;
+			for (let i = 0; i < remaining; ++i)
+			{
+				daysArray.push("");
+			}
+			console.log(daysArray);
+
+			var htmlCode = "", idx = 0;
+
+			{
+				htmlRow = ""
+				for (let temp in dayNames)
+				{
+					htmlRow += dayTitle(dayNames[temp]);
+				}
+				htmlRow = '<tr>' + htmlRow + '</tr>';
+				htmlCode += htmlRow;
+			}
+
+			for (var i = 0; i < 5; ++i)
+			{
+				htmlRow = ""
+				for (var j = 0; j < 7; ++j)
+				{
+					var temp = daysArray[idx++];
+					htmlRow += "<td>" + temp + "</td>";
+				}
+				htmlRow = '<tr>' + htmlRow + '</tr>';
+
+				htmlCode += htmlRow;
+			}
+			htmlCode = '<table>' + htmlCode + '</table>';
+			htmlCode = '<h2>' + monthName + '</h2>' + htmlCode;
+
+			document.write(htmlCode);
+		}
+		var userInput = prompt('Haven\'t finished this program. Enter year, month,and no. of days in the month: ')
+		userInput = userInput.split(' ');
+		makeMonthCalendar(userInput[0], userInput[1], userInput[2]);
+	</script>
+</head>
+<body>
+	
+
+</body>
+</html>

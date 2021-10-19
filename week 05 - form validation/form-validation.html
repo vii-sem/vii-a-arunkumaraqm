@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Form validation with email regex, confirm password.
+The other one this week was "call two functions from one button's onclick" but that's too easy -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Temp</title>
+	<style type="text/css">
+		td {
+			text-align: center;
+		}
+		.validation-error {
+			color: red;
+			font: 12px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = main;
+
+		var fullnameValidationErrorElement, emailValidationErrorElement, passwordValidationErrorElement, confirmPasswordValidationErrorElement;
+		function main() {
+			fullnameValidationErrorElement = document.getElementById('fullname-validation-error');
+			emailValidationErrorElement = document.getElementById('email-validation-error');
+			passwordValidationErrorElement = document.getElementById('password-validation-error');
+			confirmPasswordValidationErrorElement = document.getElementById('confirm-password-validation-error');
+		}
+
+		function validateFullname() {
+			console.log('hey');
+			var validationErrorTextElement = fullnameValidationErrorElement;
+			var mystring = document.getElementById('fullname-input').value;
+			var isValid = Boolean(mystring);
+		
+			validationErrorTextElement.innerHTML = isValid? '<span style="color:green;">⚑</span>': '<span style="color:red;">⚑</span>';
+		}		
+
+		function validateEmail() {
+			var validationErrorTextElement = emailValidationErrorElement;
+			var mystring = document.getElementById('email-input').value;
+			var msg;
+			var isValid = false;
+			console.log('here');
+
+
+			regexp = new RegExp(/^[a-zA-Z0-9\.]+@[a-zA-Z]+\.com$/)
+			if (regexp.test(mystring)){
+				// yes it is an email address
+				isValid = true;
+			}
+			validationErrorTextElement.innerHTML = isValid? '<span style="color:green;">⚑</span>': '<span style="color:red;">⚑</span>';
+		}	
+
+
+		function validatePassword() {
+			var validationErrorTextElement = passwordValidationErrorElement;
+			var mystring = document.getElementById('password-input').value;
+			var isValid = false;
+			console.log('here');
+
+
+			if (mystring.length >= 6){
+				isValid = true;
+			}
+			validationErrorTextElement.innerHTML = isValid? '<span style="color:green;">⚑</span>': '<span style="color:red;">⚑</span>';
+
+			validateConfirmPassword();
+		}	
+
+		function validateConfirmPassword() {
+			var validationErrorTextElement = confirmPasswordValidationErrorElement;
+			var one = document.getElementById('confirm-password-input').value;
+			var two = document.getElementById('password-input').value;
+			var isValid = false;
+			if (one == two){
+				isValid = true;
+			}
+			validationErrorTextElement.innerHTML = isValid? '<span style="color:green;">⚑</span>': '<span style="color:red;">⚑</span>';
+		}		
+	
+
+	// ⚑
+	</script>
+	
+</head>
+<body>
+	<h3>Form</h3>
+	<form>
+		<p>Fullname: </p>
+		<input type="text" id='fullname-input' name="fullname" onblur="validateFullname();">		
+		<span id='fullname-validation-error' class="validation-error"></span>
+		<p>Email: </p>
+		<input type="text" id='email-input' name="email" onblur="validateEmail();">		
+		<span id='email-validation-error' class="validation-error"></span>
+		<p>Password: </p>
+		<input type="password" id='password-input' name="password" onblur="validatePassword();">		
+		<span id='password-validation-error' class="validation-error"></span>
+		<p>Confirm Password: </p>
+		<input type="password" id='confirm-password-input' name="confirm-password" onblur="validateConfirmPassword();">		
+		<span id='confirm-password-validation-error' class="validation-error"></span>
+		
+	</form>
+</body>
+</html>
