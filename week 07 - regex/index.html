@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+  <p id="demo"></p>
+
+  <script>
+    var str1 = "arunkumar.aqm@gmail.com";
+
+    var matches = str1.match(/^([a-zA-Z0-9_\-\.]+)\@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{3,5})$/);
+    document.write('<br/>Original String 1: ', str1);
+    document.write('<br/>Matches: ', JSON.stringify(matches));
+    console.log(matches);
+
+
+    var str2 = "I have 428 dollars; but I need 500";
+
+    var matches = str2.match(/(\d+)([^\d]+)(\d+)/);
+
+    document.write('<br/>Original String 2: ', str2);
+
+    document.write('<br/>Matches: ', JSON.stringify(matches));
+   </script>
+
+</body>
+
+</html>
